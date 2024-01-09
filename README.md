@@ -1,5 +1,7 @@
 # `useMountEffect`
 
+[![npm version](https://badge.fury.io/js/use-mount-effect.svg)](https://badge.fury.io/js/use-mount-effect)
+
 A React hook triggered only once on mount.
 
 ## Background
