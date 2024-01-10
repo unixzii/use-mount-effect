@@ -51,11 +51,18 @@ const MyComponent = () => {
 };
 ```
 
-## Notes
+## FAQ
 
-You should really fix your effects if you find your app works incorrectly due to the strict mode, because it implies some logic errors or resource leakage.
+### Should I use this hook in production mode?
+Actually, you don't need to use this hook in production mode, because it behaves just like `useEffect`. You should really fix your effects if you find your app works incorrectly due to the strict mode, because it implies some logic errors or resource leakage.
 
 **Always use this hook with caution.**
+
+### What's the difference between it and `useEffect`?
+The cleanup callback is delayed until the next event loop when you use `useMountEffect`, even in production mode. Be sure to verify that it doesn't affect your code.
+
+### Do I really need this?
+Just one more reminder. `useEffect` doesn't run twice in production mode. And if there is no user-visible behavior difference between running it once and running it twice, you don't need `useMountEffect`. To learn more, check out [this](https://react.dev/learn/synchronizing-with-effects#sending-analytics).
 
 ## License
 
